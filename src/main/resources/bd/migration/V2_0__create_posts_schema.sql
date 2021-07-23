@@ -1,0 +1,7 @@
+CREATE TABLE posts(
+id BIGINT NOT NULL AUTO_INCREMENT,
+content VARCHAR(1000) NOT NULL,
+created DATE,
+updated DATE,
+PRIMARY KEY(id)
+);

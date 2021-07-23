@@ -11,6 +11,12 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
+
+        <flyway.user>root</flyway.user>
+        <flyway.password>1111</flyway.password>
+        <flyway.schemas>app-db</flyway.schemas>
+        <flyway.url>url</flyway.url>
+        <flyway.locations>location</flyway.locations>
     </properties>
 
     <dependencies>
@@ -32,12 +38,6 @@
             <artifactId>mockito-core</artifactId>
             <version>3.10.0</version>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-            <version>4.3.5</version>
         </dependency>
 
         <dependency>
