@@ -11,15 +11,16 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
-
-        <flyway.user>root</flyway.user>
-        <flyway.password>1111</flyway.password>
-        <flyway.schemas>app-db</flyway.schemas>
-        <flyway.url>url</flyway.url>
-        <flyway.locations>location</flyway.locations>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.23</version>
+        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -60,4 +61,28 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>7.9.1</version>
+                <configuration>
+                    <user>postgres</user>
+                    <password>1111</password>
+                    <url>jdbc:postgresql://localhost:5432/crud</url>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
